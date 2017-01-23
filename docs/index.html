@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>D3 Block-a-Day: Day 18, January 18, 2017</title>
+<style>
+
+#wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.state-boundary {
+  fill: #000;
+  stroke: #fff;
+  stroke-width: 1.3px;
+}
+
+.district-boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .3px;
+}
+
+</style>
+</head>
+<body>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/topojson.v2.min.js"></script>
+
+<div id="wrapper">
+   <div id="chart"></div>
+</div>
+
+<script>
+
+  var width = 960,
+    height = 600;
+  
+  var svg = d3.select('#chart')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height);
+  
+  var g = svg.append('g')
+  
+  var projection = d3.geoAlbersUsa()
+      .scale(1000)
+      .translate([width / 2, height / 2]);
+ 
+  var path = d3.geoPath()
+      .projection(projection);
+
+  d3.json("USA_Districts_States_NO_PROPERTIES.topojson", function(error, state_districts) {
+  	if (error) throw error;
+
+     svg.insert("path", ".graticule")
+      .datum(topojson.feature(state_districts, state_districts.objects.states))
+      .attr("class", "state-boundary")
+      .attr("d", path);
+
+     svg.insert("path", ".graticule")
+      .datum(topojson.feature(state_districts, state_districts.objects.districts))
+      .attr("class", "district-boundary")
+      .attr("d", path);    
+	});
+</script>
+</body>
