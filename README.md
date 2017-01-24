@@ -1,6 +1,6 @@
 # D3 Block-a-Day: Day 18, January, 18th 2017
 
-<a href="https://dbetebenner.github.io/D3_01182017/"><img src="https://gist.githubusercontent.com/dbetebenner/fdec153106e964f9f71e69f2912454da/raw/313bdf98a475bfc1337a99d16477d0cff16d2919/thumbnail.png" align="left" hspace="12" vspace="80"></a>
+<a href="https://dbetebenner.github.io/D3_01182017/"><img src="https://gist.githubusercontent.com/dbetebenner/fdec153106e964f9f71e69f2912454da/raw/313bdf98a475bfc1337a99d16477d0cff16d2919/thumbnail.png" align="left" hspace="12" vspace="100"></a>
 
 New Year's Resolution for 2017: Make a D3 Block a day to teach myself D3. This is Number 18. This example
 builds on yesterday's [USA district map](https://github.com/dbetebenner/D3_01172017) adding in the layer showing
